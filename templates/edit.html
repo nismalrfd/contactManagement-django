@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'edit-style.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/651d2edad9.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>edit profile</title>
+    </head>
+<body>
+    
+    <div class="container">
+        <header class="hero">
+            <a href="{% url 'contactprofile' contact.id %}">
+                <i class="fas fa-arrow-circle-left back-btn"></i>
+            </a>
+
+            <div class="hero-info">
+                <h1 class="name">{{contact.full_name | title}}</h1>
+                <p class="relationship">{{contact.relationship}}</p>
+            </div>
+        </header>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <section class="contact-info">
+            <div class="info-line">
+                <input type="text" name="fullname" placeholder="Full name" class="type" value="{{ contact.full_name }}">
+            </div>
+            <div class="info-line">
+                <!-- <i class="fas fa-envelope icon-gradient"></i> -->
+                <input type="tel" name="phonenumber" placeholder="Phone Number" class="type" value="{{ contact.phone_number }}">
+            </div>
+            <div class="info-line">
+                <!-- <i class="fas fa-sms text icon-gradient"></i> -->
+                <input type="text" name="relationship" placeholder="Relationship" class="type" value="{{ contact.relationship }}">
+            </div>
+            <div class="info-line">
+                <!-- <i class="fas fa-envelope icon-gradient"></i> -->
+                <input type="email" name="email" placeholder="Email" class="type" value="{{ contact.email }}">
+            </div>
+            <div class="info-line">
+                <!-- <i id="location" class="fas fa-map-marker-alt icon-gradient"></i> -->
+                <input type="text" name="address" placeholder="Address" class="type" value="{{ contact.address }}">
+            </div>
+        <div class="button-container">
+            <a href="">
+                <div class="update-contact">
+                    <i class="fas fa-check-circle icon-gradient"></i>
+                    <button class="button">Save</button>
+                </div>
+            </a>
+        </form>
+            <a href="{% url 'delete_contact' contact.id %}">
+                <div class="update-contact">
+                    <i class="fas fa-trash icon-gradient"></i>
+                    <button class="button">Delete</button>
+                </div>
+            </a>
+        </div>
+    </section>
+    </div>
+</body>
+</html>

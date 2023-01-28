@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'profile-style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/651d2edad9.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact profile</title>
+</head>
+<body>
+
+    <div class="container">
+        <header class="hero">
+            <a href="{% url 'index' %}">
+                <i class="fas fa-arrow-circle-left back-btn"></i>
+            </a>
+            <a href="{% url 'edit_contact' contact.id %}">
+                <i class="fas fa-cog edit-btn"></i>
+            </a>
+
+            <div class="hero-info">
+                <h1 class="name">{{contact.full_name | title}}</h1>
+                <p class="relationship">{{contact.relationship}}</p>
+            </div>
+        </header>
+        <section class="contact-info">
+            <div class="info-line">
+                <i class="fas fa-phone icon-gradient"></i>
+                <p class="phone-number">{{contact.full_name}}</p>
+            </div>
+            <div class="info-line">
+                <i class="fas fa-sms text icon-gradient"></i>
+                <p class="sms">{{contact.phone_number}}</p>
+            </div>
+            <div class="info-line">
+                <i class="fas fa-envelope icon-gradient"></i>
+                <p class="email">{{contact.email}}</p>
+            </div>
+            <div class="info-line">
+                <i id="location" class="fas fa-map-marker-alt icon-gradient"></i>
+                <p class="address">{{contact.address}}</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

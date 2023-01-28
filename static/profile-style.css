@@ -1,0 +1,85 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter',sans-serif;
+    margin: 0;
+    color: white;
+
+
+}
+.container{
+    max-width: 420px;
+    margin: 0 auto;
+    background-color: rgb(38, 38, 38);
+    min-height: 600px;
+
+
+}
+
+.hero{
+    background: linear-gradient(90deg, rgba(139,170,167,1) 0%, rgba(91,133,88,1) 54%, rgba(43,76,47,1) 100%);
+    padding: 1rem 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    
+}
+.back-btn{
+    font-size: 1.7em;
+    padding-left: 1em;
+}
+.edit-btn{
+    padding-left: 19rem;
+}
+.hero-info{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+i{
+    font-size: 1.5em;
+}
+.relationship{
+    width: 6em;
+    text-align: center;
+    padding: .4em .5em;
+    border-radius: 100px;
+    font-size: .8em;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.contact-info{
+    padding: 3em 1.5em;
+    overflow: auto;
+    overflow: hidden;
+    height: 600px;
+
+}
+.info-line{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 1em 2em;
+    margin-top: 2em;
+    border-radius: 20px;
+    box-shadow: 6px 6px 12px #2d2f33,
+                -6px -6px 12px #35393d;
+
+    }
+p{
+    margin: 0;
+    padding-left: 2em;
+}
+#location{
+    padding: .5em .6em;
+}
+.icon-gradient{
+    background: linear-gradient(90deg, rgba(139,170,167,1) 0%, rgba(91,133,88,1) 54%, rgba(43,76,47,1) 100%);
+    border-radius: 100px;
+    padding: .5em;
+
+}
